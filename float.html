@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>float</title>
+    <style type="text/css">
+        .body {
+            background: #CCC;
+            overflow: auto;
+            /* 兼容IE6 */
+            zoom: 1;
+        }
+        .a {
+            float: left;
+            width: 100px;
+            background: red;
+            /* 配置了float和margin-left后，IE6会出现双边距，IE6会认为是40px */
+            /*margin-left: 20px;*/
+
+            /*双边距问题，可以用 _ 的hack解决，或者用display: inline 来解决*/
+            /*_margin-left: 10px;*/
+            /*display: inline;*/
+        }
+        .b {
+            /*float: left;*/
+            /*width: 100%;*/
+            margin-left: 100px;
+            background: green;
+        }
+        /*.c {*/
+            /*float: right;*/
+            /*width: 200px;*/
+            /*background: yellow;*/
+        /*}*/
+    </style>
+
+
+    <style type="text/css">
+        .B {
+            position: relative;
+            background: #CCC;
+            /*overflow: auto;*/
+            /* 兼容IE6 */
+            zoom: 1;
+        }
+        .ba {
+            float: left;
+            width: 100px;
+            background: red;
+        }
+        .bb {
+            position: absolute;
+            left: 100px;
+            right: 0;
+            background: yellow;
+        }
+        .fix-ie-right-0 {
+            float:right;
+        }
+
+        .C {
+            background: #CCC;
+            overflow: auto;
+        }
+        .ca {
+            float: left;
+            width: 600px;
+            height: 200px;
+            background: red;
+        }
+        .cb {
+            overflow: hidden;
+            zoom: 1;
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="body">
+        <div class="a">a</div>
+        <div class="b">b</div>
+        <div class="c">c</div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div class="B">
+        <div class="ba">ba</div>
+        <div class="bb">
+            bb
+            <span class="fix-ie-right-0"></span>
+        </div>
+    </div>
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div class="C">
+        <div class="ca">ca</div>
+        <div class="cb">
+            cc
+        </div>
+    </div>
+</body>
+</html>
